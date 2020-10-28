@@ -13,12 +13,14 @@
 		public function calendarHome()
 		{
 			$data['calendar'] = $this->calendar_model->get_calenderData();
-			//$data['section'] = $this->caldndar_model->get_section();
+			$data['section'] = $this->calendar_model->get_section();
 
 			// user login ok
 			$this->load->view('header');
 			$this->load->view('calendar/calendarHome', $data);
 			$this->load->view('footer');
 		}
+
+
 	}
 ?>

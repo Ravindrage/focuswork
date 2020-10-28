@@ -14,17 +14,20 @@
       $this->db->from('calendar');
       $this->db->order_by('datetime');
       $query = $this->db->get();
+
       return $query->result_array();
-
-      //return $query->result_array();
-
+      
     }
 
 
     public function get_section()
      {
 
-      $query = $this->db->get('section');
+      $this->db->select('*');
+      $this->db->from('section');
+      $this->db->order_by('id');
+      $query = $this->db->get();
+
       return $query->result_array();
 
      }

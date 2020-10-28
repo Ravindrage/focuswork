@@ -13,6 +13,27 @@
 	<!-- css -->
 	<link href="<?= base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
 	<link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
+	<?php  
+		$url = $_SERVER['REQUEST_URI']; 
+		//print_r($url);
+	?>
+
+	<?php if(strpos($url,"calendar")) { ?>
+
+	<link href="<?= base_url('assets/css/jquery-ui.css') ?>" rel="stylesheet" />
+
+    <link href="<?= base_url('assets/css/jquery.ui.theme.css') ?>" rel="stylesheet" />
+    <link href="<?= base_url('assets/css/timelineScheduler.css') ?>" rel="stylesheet" />
+    <link href="<?= base_url('assets/css/timelineScheduler.styling.css') ?>" rel="stylesheet" />
+    <link href="<?= base_url('assets/css/calendar.css') ?>" rel="stylesheet" />
+
+    <script src="<?= base_url('assets/js/moment.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/jquery-1.9.1.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/jquery-ui-1.10.2.min.js') ?>"></script>
+
+    <script src="<?= base_url('assets/js/timelineScheduler.js') ?>"></script>
+   <?php } ?>
+
 
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
