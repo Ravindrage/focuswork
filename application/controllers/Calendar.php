@@ -1,41 +1,24 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+	class Calendar extends CI_Controller {
 
-/**
- * User class.
- * 
- * @extends CI_Controller
- */
-class Calendar extends CI_Controller {
+		public function __construct()
+		{
+			parent::__construct();
+			$this->load->model('calendar_model');
+			$this->load->helper('url_helper');
+			$this->load->library(array('session'));
+			$this->load->helper(array('url'));
+		}
 
-	/**
-	 * __construct function.
-	 * 
-	 * @access public
-	 * @return void
-	 */
-	public function __construct() {
-		
-		parent::__construct();
-		$this->load->library(array('session'));
-		$this->load->helper(array('url'));
-		$this->load->model('calendar_model');
-		
+		public function calendarHome()
+		{
+			$data['calendar'] = $this->calendar_model->get_calenderData();
+			//$data['section'] = $this->caldndar_model->get_section();
+
+			// user login ok
+			$this->load->view('header');
+			$this->load->view('calendar/calendarHome', $data);
+			$this->load->view('footer');
+		}
 	}
-	
-	
-	public function index()
-	{
-		$data['calendar'] = $this->calendar_model->get_calenderData();
-		//$data['section'] = $this->caldndar_model->get_section();
-
-		// user login ok
-		$this->load->view('templates/header', $data);
-		$this->load->view('calendar/index', $data);
-		$this->load->view('templates/footer');
-	}
-
-	public dashboard() {
-		
-	}
-}
+?>

@@ -9,8 +9,5 @@
 	<script src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
 	<script src="<?= base_url('assets/js/script.js') ?>"></script>
 
-	<!---  Add New Item End Here ----->
-	<script src="<?= base_url('assets/js/my_js.js') ?>"></script>
-
 </body>
 </html>
