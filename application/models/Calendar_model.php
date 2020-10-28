@@ -22,13 +22,17 @@ class Calendar_model extends CI_Model {
 	}
 
 	public function get_data() {
-		$sqlcategory = "select * from calendar order by datetime";
-		//$calendarcategory = $conn->query($sqlcategory);
+
+		$this->db->select('*');
+      	$this->db->from('calendar');
+      	$this->db->order_by('datetime');
+      	$query = $this->db->get();
+
+      	return $query->result_array();
+
 		$variable = '';
 		//$increment = 501 ;
 		$section = 1;
-
-		$query = $db->query($sqlcategory);
 
 		foreach ($query->getResult() as $rowcategory)
 		{
@@ -53,22 +57,16 @@ class Calendar_model extends CI_Model {
 	}
 
 	public function get_section () {
-		$sqlsection = "select * from section order by id";
-		//$calendarcategory = $conn->query($sqlcategory);
+
+		$this->db->select('*');
+      	$this->db->from('section');
+      	$this->db->order_by('id');
+      	$query = $this->db->get();
+
+      	return $query->result_array();
+
 		$sectionvariable = '';
 		$totalsection=0;
-		/*
-		foreach($calendarcategory as $rowcategory)
-		{
-		$id = $rowcategory['id'] ;
-		$section = $rowcategory['section'] ;
-
-		$sectionvariable .= "{     id: ".$id.",    name: '".$section."' },";
-		$totalsection++ ;
-		}
-		*/
-
-		$query = $db->query($sqlsection);
 
 		foreach ($query->getResult() as $rowcategory)
 		{

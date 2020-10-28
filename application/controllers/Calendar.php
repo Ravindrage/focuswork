@@ -24,8 +24,18 @@ class Calendar extends CI_Controller {
 	}
 	
 	
-	public function index() {
-		
+	public function index()
+	{
+		$data['calendar'] = $this->calendar_model->get_calenderData();
+		//$data['section'] = $this->caldndar_model->get_section();
 
+		// user login ok
+		$this->load->view('templates/header', $data);
+		$this->load->view('calendar/index', $data);
+		$this->load->view('templates/footer');
+	}
+
+	public dashboard() {
 		
 	}
+}
