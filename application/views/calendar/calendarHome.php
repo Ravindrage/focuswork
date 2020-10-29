@@ -275,7 +275,7 @@ endforeach;
 <div id="popupContact">
 <!-- Contact Us Form -->
       <form action="#" id="form" method="post" name="form">
-      <img id="close" src="<?= base_url('assets/close.png') ?>" onclick ="div_hide()">
+      <img id="close" src="<?= base_url('assets/img/close.png') ?>" onclick ="div_hide()">
       <h2>Calendar</h2>
       <hr>
       <input id="event" name="event"  type="text"> <p></p>
@@ -330,7 +330,7 @@ endforeach;
 <div id="popupContact1">
 <!-- Contact Us Form -->
 <form action="#" id="form1" method="post" name="form">
-<img id="close" src="close.png" onclick ="div_hide1()">
+<img id="close" src="<?= base_url('assets/img/close.png') ?>" onclick ="div_hide1()">
 <h2>Calendar</h2>
 <hr>
 
@@ -379,7 +379,7 @@ endforeach;
 <div id="popupContact2">
 <!-- Contact Us Form -->
 <form action="#" id="form2" method="post" name="form">
-<img id="close" src="close.png" onclick ="sectionpopuphide()">
+<img id="close" src="<?= base_url('assets/img/close.png') ?>" onclick ="sectionpopuphide()">
 <h2>Calendar Section</h2>
 <hr>
 <input id="sectionname" name="sectionname"  type="text" placeholder="Section Name">
@@ -401,7 +401,7 @@ endforeach;
 <!-- Contact Us Form -->
 
 <form action="#" id="form3" method="post" name="form">
-   <img id="close" src="close.png" onclick ="sectionpopuphide2()">
+   <img id="close" src="<?= base_url('assets/img/close.png') ?>" onclick ="sectionpopuphide2()">
    <h2>Scheduale</h2>
    <hr>
    <div id="listpop"> &nbsp; </div>
