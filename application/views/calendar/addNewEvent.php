@@ -7,30 +7,30 @@
 <h3>Calendar</h3>
 <hr>
 
-<input type="text" id="date1" placeholder="Date">
+<input type="text" id="date1" name= "data1" placeholder="Date">
 <input id="event1" name="event1" type="text" placeholder="Event"><p></p>
 <span class="time">Time : </span><select id="starttime1" name="starttime1">
-  <option value="00">00:00 </option>
-  <option value="03">03:00 </option>
-  <option value="06">06:00 </option>
-  <option value="09">09:00 </option>
-  <option value="12">12:00 </option>
-  <option value="15">15:00 </option>
-  <option value="18">18:00 </option>
-  <option value="21">21:00 </option>
-  <option value="24">23:59 </option>
+  <option value="00:00">00:00 </option>
+  <option value="03:00">03:00 </option>
+  <option value="06:00">06:00 </option>
+  <option value="09:00">09:00 </option>
+  <option value="12:00">12:00 </option>
+  <option value="15:00">15:00 </option>
+  <option value="18:00">18:00 </option>
+  <option value="21:00">21:00 </option>
+  <option value="23:59">23:59 </option>
 </select>
  <span style="font-size:16px; font-family:raleway;color:#888; font-weight:400;">-To-</span>
 <select id="endtime1" name="endtime1">
-  <option value="00">00:00 </option>
-  <option value="03">03:00 </option>
-  <option value="06">06:00 </option>
-  <option value="09">09:00 </option>
-  <option value="12">12:00 </option>
-  <option value="15">15:00 </option>
-  <option value="18">18:00 </option>
-  <option value="21">21:00 </option>
-  <option value="24">23:59 </option>
+  <option value="00:00">00:00 </option>
+  <option value="03:00">03:00 </option>
+  <option value="06:00">06:00 </option>
+  <option value="09:00">09:00 </option>
+  <option value="12:00">12:00 </option>
+  <option value="15:00">15:00 </option>
+  <option value="18:00">18:00 </option>
+  <option value="21:00">21:00 </option>
+  <option value="23:59">23:59 </option>
 </select>
 <textarea id="description1" name="description1" placeholder="Message"></textarea>
 

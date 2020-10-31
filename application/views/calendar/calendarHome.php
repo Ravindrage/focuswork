@@ -1,40 +1,26 @@
 <h2><?php echo "Calendar"; ?></h2>
-<table border="1px">
-	
-	<tr><th>id</th><th>Events</th><th>Description</th><th>Datetime</th><th>Section</th><th>Starttime</th><th>Endtime</th></tr>
+
 <?php 
 	$variable = '';
 	//$section = 1;
 	foreach ($calendar as $calendar_cat): 
-?> 
-
-	<tr>
-		<td><?php echo $increment = $calendar_cat['id']; ?></td>
-		<td><?php echo $event = $calendar_cat['event']; ?></td>
-		<td><?php echo $description = $calendar_cat['description']; ?></td>
-		<td><?php echo $datetime = $calendar_cat['datetime']; ?></td>
-		<td><?php echo $calSection = $calendar_cat['section']; ?></td>
-		<td><?php echo $starttime = $calendar_cat['starttime']; ?></td> 
-		<td><?php echo $endtime = $calendar_cat['endtime']; ?></td>
-	</tr>
+		$increment = $calendar_cat['id'];
+		$event = $calendar_cat['event'];
+		$description = $calendar_cat['description'];
+		$datetime = $calendar_cat['datetime'];
+		$calSection = $calendar_cat['section'];
+		$starttime = $calendar_cat['starttime']; 
+		$endtime = $calendar_cat['endtime'];
 	
-<?php 
 	$newDate = date("m-d-Y", strtotime($datetime));
 	$variable .= "{ id: ".$increment.", name: '<div>".$event."</div><div>".$description."</div>',
 	                start: moment('".$newDate."','MM-DD-YYYY').add('hours', '".$starttime."'),
 	                end: moment('".$newDate."','MM-DD-YYYY').add('hours', '".$endtime."'), sectionID: ".$calSection.",classes: 'item-status-none'
 	              },";
 	endforeach; 
-?>
-</table>
-Section:
-<table border="1px">
-	
-	<tr><th>Section</th></tr>
-<?php 
 
 	$sectionvariable = '';
-  $totalsection=0;
+    $totalsection=0;
 	
 	foreach ($section as $section_item): 
     $id = $section_item['id'] ;
@@ -42,15 +28,11 @@ Section:
 
     $sectionvariable .= "{     id: ".$id.",    name: '".$section."' },";
     $totalsection++ ;
-?> 
 
-	<tr>
-		<td><?php echo $section = $section_item['section']; ?></td>
-	</tr>
-<?php 
+	$section = $section_item['section'];
+
 endforeach; 
 ?>
-</table>
 
 <script >
 

@@ -76,8 +76,9 @@ relX = document.getElementById('left').value ;
 relY = document.getElementById('top').value ;
 
 action =  value ;
-
-$.ajax({ url: "edit_delete.php",
+//alert("eventdata="+eventdata+"&eventdesc="+eventdesc+"&action="+action+"&section="+section+"&date="+date+"&starttime="+start+"&endtime="+end);
+$.ajax({ url: "calendar/addCalendarEvent",
+        type: "POST",
         data: "eventdata="+eventdata+"&eventdesc="+eventdesc+"&action="+action+"&section="+section+"&date="+date+"&starttime="+start+"&endtime="+end,
         success: function(result){
         //alert(result);

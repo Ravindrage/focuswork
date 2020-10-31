@@ -32,5 +32,23 @@
 
      }
 
+     public function saveNewEvent($event, $description , $datetime, $section, $starttime, $endtime)
+     {
+
+      $data = array(
+        'event'   => $event,
+        'description'      => $description,
+        'datetime'   => $section,
+        'section' => $datetime,
+        'starttime'   => $starttime,
+        'endtime' => $endtime
+      );
+    
+      $this->db->insert('calendar', $data);
+
+      $str = $this->db->last_query();
+      echo $str;
+     }
+
   }
 ?>
