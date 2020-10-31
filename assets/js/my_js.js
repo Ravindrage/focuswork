@@ -19,15 +19,17 @@ action =  value ;
 
 var start = document.getElementById('starttime').value ;
 var end = document.getElementById('endtime').value ;
-var status = document.getElementById('status').value ;
+//var status = document.getElementById('status').value ;
 
 if (start>end) {
   alert("Start date should less than end Date");
   return ;
 }
 
-$.ajax({url: "edit_delete.php",
-        data: "eventdata="+eventdata+"&eventdesc="+eventdesc+"&action="+action+"&dataid="+dataid+"&starttime="+start+"&endtime="+end+"&status="+status,
+$.ajax({url: "calendar/editCalendarEvent",
+        type: "POST",
+        //data: "eventdata="+eventdata+"&eventdesc="+eventdesc+"&action="+action+"&dataid="+dataid+"&starttime="+start+"&endtime="+end+"&status="+status,
+        data: "eventdata="+eventdata+"&eventdesc="+eventdesc+"&action="+action+"&dataid="+dataid+"&starttime="+start+"&endtime="+end,
         success: function(result){
 
             if(result.toString()==="delete")

@@ -43,11 +43,21 @@
         'starttime'   => $starttime,
         'endtime' => $endtime
       );
-    
+      
       $this->db->insert('calendar', $data);
+     }
 
-      $str = $this->db->last_query();
-      echo $str;
+
+     public function get_CalenderById ($id) {
+      $query = $this->db->query("SELECT * FROM calendar WHERE id = '".$id."'");
+      return $query->result_array();
+     }
+
+
+     public function update_CalendarById($event, $description, $newDate, $section, $newStartTime, $newEndTime, $id) 
+     {
+      $this->db->where('id', $id);
+      $this->db->update('calendar', array('event'=>$event, 'description'=>$description, 'datetime'=>$newDate, 'section'=>$section, 'starttime'=>$newStartTime, 'endtime'=>$newEndTime));
      }
 
   }

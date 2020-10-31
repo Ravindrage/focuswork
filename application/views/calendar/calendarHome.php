@@ -13,10 +13,16 @@
 		$endtime = $calendar_cat['endtime'];
 	
 	$newDate = date("m-d-Y", strtotime($datetime));
+    /**
 	$variable .= "{ id: ".$increment.", name: '<div>".$event."</div><div>".$description."</div>',
 	                start: moment('".$newDate."','MM-DD-YYYY').add('hours', '".$starttime."'),
 	                end: moment('".$newDate."','MM-DD-YYYY').add('hours', '".$endtime."'), sectionID: ".$calSection.",classes: 'item-status-none'
 	              },";
+    */
+    $variable .= "{ id: ".$increment.", name: '<div>".$event."</div><div>".$description."</div>',
+                    start: moment('".$newDate."','MM-DD-YYYY').add('hours', '".$starttime."'),
+                    end: moment('".$newDate."','MM-DD-YYYY').add('hours', '".$endtime."'), sectionID: ".$calSection."
+                  },";
 	endforeach; 
 
 	$sectionvariable = '';
@@ -153,7 +159,8 @@ endforeach;
               //  document.getElementById('abc1').style.display = "none";
 
 
-              $.ajax({ url: "edit_delete.php",
+              $.ajax({ url: "calendar/editCalendarEvent",
+                        type: "POST",
                       data: "action=showeditdata"+"&dataid="+item.id,
                       success: function(result){
                       //alert(result) ;
@@ -162,7 +169,7 @@ endforeach;
                      document.getElementById('description').value = obj.description ;
                      $("#starttime").val(obj.starttime).change();
                      $("#endtime").val(obj.starttime).change();
-                     $("#status").val(obj.status).change();
+                     //$("#status").val(obj.status).change();
 
 
 

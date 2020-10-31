@@ -29,17 +29,6 @@
 
 			// load form helper and validation library
 			$this->load->helper('form');
-			$this->load->library('form_validation');
-
-			// set validation rules
-			/*
-			$this->form_validation->set_rules('data1', 'Event', 'trim|required|alpha_numeric');
-			$this->form_validation->set_rules('event1', 'Description', 'trim|required|alpha_numeric');
-			$this->form_validation->set_rules('section', 'Section', 'trim|required');
-			$this->form_validation->set_rules('date', 'Section', 'trim|required');
-			$this->form_validation->set_rules('starttime1', 'Section', 'trim|required');
-			$this->form_validation->set_rules('endtime1', 'Section', 'trim|required');
-			*/
 
 			// set variables from the AddNewEvent form
 			$event = $this->input->post('eventdata');
@@ -56,6 +45,7 @@
 
 				
 				//$this->load->view('calendar/calendarHome', $data);
+				//return("Hello world");
 				return 1;
 				
 			} else {
@@ -64,19 +54,35 @@
 				
 				redirect('/calendar');
 			}
-			
-			/*
-			  $event = trim($_REQUEST['eventdata']);
-			  $description = trim($_REQUEST['eventdesc']);
-			  $description ;
-			  $section = $_REQUEST['section'] ;
-			  $date = $_REQUEST['date'] ;
-			  $newDate = date("Y-m-d", strtotime($date));
-			  $starttime = $_REQUEST['starttime'] ;
-			  $endtime =  $_REQUEST['endtime'] ;
-			 */
+
 		}
 
+
+		public function editCalendarEvent()
+		{
+			//echo "I am in update Controller";
+      		//exit(); 
+
+			$id = $this->input->post('dataid');
+			//$id= $this->calendar_model->get_CalenderById($id);
+
+			$event = $this->input->post('eventdata');
+			$description    = $this->input->post('eventdesc');
+			$section = $this->input->post('section');
+			$datetime = $this->input->post('date');
+			$newDate = date("Y-m-d", strtotime($datetime));
+			$starttime    = $this->input->post('starttime');
+			$newStartTime = $newDate." ".$starttime;
+			$endtime = $this->input->post('endtime');
+			$newEndTime = $newDate." ".$endtime;
+			//$status =  $this->input->post('status');
+
+			$this->calendar_model->update_CalendarById($event, $description, $section, $newDate, $newStartTime, $newEndTime, $id);
+			//echo "Data updated successfully !";
+			//$this->load->view('calendar/calendarHome', $data);
+			//redirect('/calendar');
+
+		}
 
 	}
 ?>
